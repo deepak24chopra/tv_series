@@ -1,0 +1,43 @@
+<!-- Start: Main content -->
+   
+     
+        <!-- Start: Product description -->
+
+            <div class="row">
+            <div class=" col-md-5 ">
+              <img src="<%= @serial.image_url %>", height = "300",  width = "400" class="thumbnail">       
+            </div>
+        
+          <div class="col-md-7">
+              <div class="page-header">
+              <h3><%= @serial.name -%></h3>
+              </div>
+              <p>
+              <%= @serial.content %>        
+              </p>  
+                <h3>Seasons</h3>
+                <ul class="features">
+                <% @serial.seasons.each do |season| -%>
+                  <li><%= link_to "#{season.name}", :action => 'season', :id => season.id %></li>
+                
+                    <p><ol>
+                      <% season.episodes.each do |epi| -%>
+                      <li>
+                      <%= link_to "#{epi.name}", :action => 'episode', :id => epi.id %>
+                      </li><% end -%>
+                      </ol>
+                    </p>
+         
+              
+                  <% end -%>                 
+                </ul>
+                       </div>
+                </div>
+                                                 
+    
+  
+          
+        <!-- End: Product description -->
+
+    
+    <!-- End: Main content -->

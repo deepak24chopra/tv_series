@@ -1,0 +1,29 @@
+<%= link_to "Back", :controller => 'entry', :action => 'list' %>
+<div class="row">
+<p id="notice"><%= notice %></p>
+<div class="col-md-3">
+<p>
+ <%= image_tag(@serial.image_url, size: "280x240")-%>
+</p>
+</div>
+<div class="col-md-9">
+<p>
+  <strong><h2><%= @serial.name %></h2></strong>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @serial.content %>
+</p>
+
+<%= link_to 'Edit', edit_serial_path(@serial) %> |
+<%= link_to 'Back', serials_path %>
+<hr />
+<p>
+<strong>Seasons:</strong>
+<% @serial.seasons.each do |season|  -%>
+<a href="<%= url_for(season) -%>"><%= season.name %></a><br />
+<% end -%>
+</p>
+</div>
+</div>

@@ -1,0 +1,43 @@
+<%= link_to "Back", :controller => 'entry', :action => 'list' %>
+
+<div class="row">
+<p id="notice"><%= notice %></p>
+<div class="col-md-3">
+<p>
+  <%= image_tag(@season.image_url, size: "280x240") -%>
+</p>
+</div>
+<div class="col-md-9">
+<p>
+  <strong><%= @season.serial.name -%></strong>
+</p>
+<p>
+  <strong>Season Number:</strong>
+  <%= @season.season_number %>
+</p>
+<p>
+  <strong>Season:</strong>
+  <%= @season.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @season.description %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @season.story %>
+</p>
+
+<%= link_to 'Edit', edit_season_path(@season) %> |
+<%= link_to 'Back', seasons_path %>
+<hr />
+<p>
+<strong>Episodes:</strong>
+<% @season.episodes.each do |episode|  -%>
+<a href="<%= url_for(episode) -%>"><%= episode.name %></a><br />
+<% end -%>
+</p>
+</div>
+</div>

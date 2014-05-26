@@ -1,0 +1,29 @@
+<%= form_for(@serial) do |f| %>
+  <% if @serial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@serial.errors.count, "error") %> prohibited this serial from being saved:</h2>
+
+      <ul>
+      <% @serial.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_area :image_url, cols: 100, rows: 1 %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name, cols: 100, rows: 1 %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content, cols: 100, rows:10 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

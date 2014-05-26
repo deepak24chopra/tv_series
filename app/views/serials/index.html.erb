@@ -1,0 +1,20 @@
+<%= link_to "Back", :controller => 'entry', :action => 'list' %>
+<h1>Listing serials</h1>
+<% @serials.each do |serial| %>
+<div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object" src="<%= serial.image_url %>" height = 120, width = 180>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><strong><%= serial.name %></strong></h4>
+    <%= serial.content %><br />
+    <strong>Seasons Count : </strong><%= serial.seasons.count %><br />
+    <%= link_to 'Show', serial %>&nbsp;
+    <%= link_to 'Edit', edit_serial_path(serial) %>&nbsp;
+    <%= link_to 'Destroy', serial, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div><br />
+<% end %>
+<br />
+
+<%= link_to 'New Serial', new_serial_path %>

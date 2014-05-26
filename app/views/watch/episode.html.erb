@@ -1,0 +1,32 @@
+  <script>
+    videojs.options.flash.swf = "video-js.swf";
+  </script>
+  <div class="page-header">
+<h3><i class="fa fa-film"></i> <%= @episode.season.name  -%> <small><%= @episode.name -%></small></h3>
+</div>
+<p>
+<center>
+<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+      poster="<%= @episode.image_url -%>"
+      data-setup="{}">
+    <source src="<%= @episode.video_url -%> " type='video/mp4' />
+    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+    <track kind="subtitles" src="<%= @episode.subtitle_url -%>" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+  
+  </video>
+  </center>
+</p>
+<div id="likes">
+<%= render "watch/likes" -%>&nbsp;
+Veiws(<%= @episode.veiws %>)
+</div>
+
+<br />
+
+<p><strong>Storyline:</strong>
+<%= @episode.storyline %>
+</p>
+
+<a href="#" download="<%= @episode.subtitle_url -%>" class="btn btn-primary">Subtitle</a>
+
+<a href="#" download="<%= @episode.torrent_url -%>" class="btn btn-default">.Torrent</a>

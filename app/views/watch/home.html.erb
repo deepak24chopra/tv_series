@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h2>WatchTvSerials</h2>
+  <p>On this site you can watch all the tv series and their latest episodes.</p>
+</div>
+<div class="page-header">
+  <h2>Serials <small>Showing All Serials</small></h2>
+</div>
+<div class="row">
+<% @serials.each do |serial| -%>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag(serial.image_url,class: "thumbnail",size: "400x400") -%>
+      <div class="caption">
+        <h3><%= serial.name -%></h3>
+        <p><%= serial.content.truncate(234) -%></p>
+        <p><%= link_to("More", {:action => 'serial', :id => serial.id}, class: "btn btn-primary") -%>&nbsp;<%= link_to("Season 4", {:action => 'season', :id => @season.id}, class: "btn btn-primary") -%></p>
+      </div>
+    </div>
+  </div>
+  <% end -%>
+</div>
+
+
+<%= will_paginate @serials %>

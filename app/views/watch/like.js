@@ -1,0 +1,1 @@
+$("#likes").html("<%= escape_javascript(render(:partial => 'watch/likes')) %>");

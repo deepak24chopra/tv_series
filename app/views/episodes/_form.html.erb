@@ -1,0 +1,69 @@
+<%= form_for(@episode) do |f| %>
+  <% if @episode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
+
+      <ul>
+      <% @episode.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :season_id %><br>
+    <%= f.select(:season_id, options_from_collection_for_select(@season, :id, :name)) %>
+  </div>
+  <div class="field">
+    <%= f.label :video_url %><br>
+    <%= f.text_area :video_url, cols: 100, rows: 1  %>
+  </div>
+  <div class="field">
+    <%= f.label :torrent_url %><br>
+    <%= f.text_area :torrent_url, cols: 100, rows: 1  %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitle_url %><br>
+    <%= f.text_area :subtitle_url, cols: 100, rows: 1  %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_area :image_url, cols: 100, rows: 1  %>
+  </div>
+  <div class="field">
+    <%= f.label :episode_number %><br>
+    <%= f.number_field :episode_number %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name, cols: 100, rows: 1  %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, cols: 100, rows: 2  %>
+  </div>
+  <div class="field">
+    <%= f.label :storyline %><br>
+    <%= f.text_area :storyline, cols: 100, rows: 10  %>
+  </div>
+  <div class="field">
+    <%= f.label :likes %><br>
+    <%= f.number_field :likes %>
+  </div>
+  <div class="field">
+    <%= f.label :veiws %><br>
+    <%= f.number_field :veiws %>
+  </div>
+  <div class="field">
+    <%= f.label :visibility %><br>
+    <%= f.check_box :visibility %>
+  </div>
+  <div class="field">
+    <%= f.label :air_date %><br>
+    <%= f.datetime_select :air_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

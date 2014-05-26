@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  season_id: 1
+  video_url: MyString
+  torrent_url: MyString
+  subtitle_url: MyString
+  image_url: MyString
+  name: MyString
+  description: MyString
+  storyline: MyString
+  air_date: 2014-05-20 16:57:01
+
+two:
+  season_id: 1
+  video_url: MyString
+  torrent_url: MyString
+  subtitle_url: MyString
+  image_url: MyString
+  name: MyString
+  description: MyString
+  storyline: MyString
+  air_date: 2014-05-20 16:57:01

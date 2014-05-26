@@ -1,0 +1,30 @@
+<%= link_to "Back", :controller => 'entry', :action => 'list' %>
+<h1>Listing contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td>&nbsp;<%= contact.name %>&nbsp;</td>
+        <td>&nbsp;<%= contact.email %>&nbsp;</td>
+        <td>&nbsp;<%= contact.content %>&nbsp;</td>
+        <td>&nbsp;<%= link_to 'Show', contact %>&nbsp;</td>
+        <td>&nbsp;<%= link_to 'Edit', edit_contact_path(contact) %>&nbsp;</td>
+        <td>&nbsp;<%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>

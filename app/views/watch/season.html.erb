@@ -1,0 +1,36 @@
+<!-- Start: Main content -->
+    <div class="content">    
+      <div class="container">
+        <!-- Start: Product description -->
+        
+          <div class="row bottom-space">
+            <div class="span12">
+              <div class="page-header">
+                <h1><%= @season.name %></h1>
+              </div>
+            </div>
+            <div class="span12 center-align">
+              <center><img src="<%= @season.image_url %>",  width = 400></center>       
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10 offset1">
+              <br /><p>
+              <%= @season.story %>        
+              </p>  
+              <div class="span8 offset1">
+                <h3>Episodes</h3>
+                <ul class="features">
+                <% @season.episodes.visible.each do |episode| -%>
+                 <li> <%= link_to "#{episode.name}", :action => 'episode', :id => episode.id %></li>
+                  <% end -%>                 
+                </ul>
+              </div>                                           
+            </div>      
+          </div>
+          
+        <!-- End: Product description -->
+      </div>
+    </div>
+    </div>
+    <!-- End: Main content -->

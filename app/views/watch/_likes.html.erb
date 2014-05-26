@@ -1,0 +1,5 @@
+<% if @call == false -%>
+<a href="<%= url_for(:controller => "watch",:action => "like",:id => @episode.id) -%>" class="btn btn-primary" data-remote="true"><i class="fa fa-thumbs-up"></i> Like (<%= @episode.likes -%>)</a>
+<% else -%>
+<a href="#" class="btn btn-primary" data-remote="true"><i class="fa fa-thumbs-up"></i> You Like This.. (<%= @episode.likes -%>)</a>
+<% end -%>

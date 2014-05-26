@@ -1,0 +1,30 @@
+<%= link_to "Back", :controller => 'entry', :action => 'list' %>
+
+<h1>Listing episodes</h1>
+
+<% @episodes.each do |episode| %>
+
+  <div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object" src="<%= episode.image_url %>" height = 120, width = 180>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><strong><%= episode.name %></strong></h4>
+    <strong>Belongs To : </strong><%= episode.season.name %><br />
+    <strong>Episode Number : </strong><%= episode.episode_number %><br />
+    <%= episode.description %><br />
+    <strong>Video URL : </strong><%= episode.video_url %><br />
+    <strong>Subtitle URL : </strong><%= episode.subtitle_url %><br />
+    <strong>Torrent URL : </strong><%= episode.torrent_url %><br />
+    <strong>Likes : </strong><%= episode.likes %><br />
+    <strong>Veiws : </strong><%= episode.veiws %><br />
+    <strong>Visibility : </strong><%= episode.visibility %><br />
+    <strong>Air Date : </strong><%= episode.air_date %><br />
+
+    <%= link_to 'Show', episode %>
+    <%= link_to 'Edit', edit_episode_path(episode) %>
+    <%= link_to 'Destroy', episode, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div></div>
+<% end %>
+<br /><br />
+<%= link_to 'New Episode', new_episode_path %>

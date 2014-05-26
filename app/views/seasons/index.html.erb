@@ -1,0 +1,27 @@
+<%= link_to "Back", :controller => 'entry', :action => 'list' %>
+<h1>Listing seasons</h1>
+
+<br />
+<% @seasons.each do |season| %>
+
+  <div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object" src="<%= season.image_url %>" height = 120, width = 180>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><strong><%= season.name %></strong></h4>
+    <strong>Belongs To : </strong><%= season.serial.name %><br />
+    <strong>Description : </strong><%= season.description %><br />
+    <strong>Season Number : </strong><%= season.season_number %><br />
+    <strong>Episodes Count : </strong><%= season.episodes.count %><br />
+    <%= link_to 'Show', season %>&nbsp;
+    <%= link_to 'Edit', edit_season_path(season) %>&nbsp;
+    <%= link_to 'Destroy', season, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;
+</div>
+</div><br />
+<% end %>
+<br />
+
+<%= will_paginate @seasons %>
+
+<%= link_to 'New Season', new_season_path %>

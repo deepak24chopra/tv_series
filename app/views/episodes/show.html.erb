@@ -1,0 +1,80 @@
+<%= link_to "Back", :controller => 'entry', :action => 'list' %>
+<p id="notice"><%= notice %></p>
+<script>
+    videojs.options.flash.swf = "video-js.swf";
+  </script>
+<p>
+  <strong>Season:</strong>
+  <a href="<%= url_for(@episode.season) -%>"><%= @episode.season.name %></a>
+</p>
+
+<p>
+  <strong>Video:</strong>
+ <center>
+<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+      poster="<%= @episode.image_url -%>"
+      data-setup="{}">
+    <source src="<%= @episode.video_url -%> " type='video/mp4' />
+    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+    <track kind="subtitles" src="<%= @episode.subtitle_url -%>" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+  
+  </video>
+  </center>
+</p>
+
+<p>
+  <strong>Torrent url:</strong>
+  <%= @episode.torrent_url %>
+</p>
+
+<p>
+  <strong>Subtitle url:</strong>
+  <%= @episode.subtitle_url %>
+</p>
+
+<p>
+  <%= image_tag(@episode.image_url, size: "420x280") %>
+</p>
+
+<p>
+  <strong>Episode Number:</strong>
+  <%= @episode.episode_number %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @episode.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @episode.description %>
+</p>
+
+<p>
+  <strong>Storyline:</strong>
+  <%= @episode.storyline %>
+</p>
+
+<p>
+  <strong>Likes:</strong>
+  <%= @episode.likes %>
+</p>
+
+<p>
+  <strong>Veiws:</strong>
+  <%= @episode.veiws %>
+</p>
+
+<p>
+  <strong>Visibility:</strong>
+  <%= @episode.visibility %>
+</p>
+
+<p>
+  <strong>Air date:</strong>
+  <%= @episode.air_date %>
+</p>
+
+<%= link_to 'Edit', edit_episode_path(@episode) %> |
+<%= link_to 'Back', episodes_path %>
