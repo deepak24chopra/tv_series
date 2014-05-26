@@ -21,7 +21,7 @@
                   <li><%= link_to "#{season.name}", :action => 'season', :id => season.id %></li>
                 
                     <p><ol>
-                      <% season.episodes.each do |epi| -%>
+                      <% season.episodes.visible.each do |epi| -%>
                       <li>
                       <%= link_to "#{epi.name}", :action => 'episode', :id => epi.id %>
                       </li><% end -%>
