@@ -10,6 +10,8 @@
       poster="<%= @episode.image_url -%>"
       data-setup="{}">
     <source src="<%= @episode.video_url -%> " type='video/mp4' />
+    <source src="<%= @episode.video_url -%>" type='video/webm' />
+    <source src="<%= @episode.video_url -%>" type='video/ogg' />
     <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
     <track kind="subtitles" src="<%= @episode.subtitle_url -%>" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
   
@@ -26,7 +28,10 @@ Veiws(<%= @episode.veiws %>)
 <p><strong>Storyline:</strong>
 <%= @episode.storyline %>
 </p>
+<div class="col-md-1">
+<%= button_to "Subtitle", @episode.subtitle_url, class: "btn btn-primary" %>
 
-<a href="#" download="<%= @episode.subtitle_url -%>" class="btn btn-primary">Subtitle</a>
-
-<a href="#" download="<%= @episode.torrent_url -%>" class="btn btn-default">.Torrent</a>
+</div>
+<div class="col-md-5">
+<%= button_to ".Torrent", @episode.torrent_url, class: "btn btn-default" %>
+</div>

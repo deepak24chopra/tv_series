@@ -10,7 +10,7 @@ class Episode < ActiveRecord::Base
 	validates_presence_of :description
 	validates_presence_of :storyline
 
-	scope :sorted, lambda { order("episodes.id ASC") }
+	scope :sorted, lambda { order("episodes.episode_number ASC") }
 	scope :newest_first, lambda { order("episodes.created_at DESC") }
 
 	scope :visible, lambda { where(:visibility => true ) }

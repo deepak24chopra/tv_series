@@ -21,7 +21,7 @@
               <div class="span8 offset1">
                 <h3>Episodes</h3>
                 <ul class="features">
-                <% @season.episodes.visible.each do |episode| -%>
+                <% @season.episodes.visible.sorted.each do |episode| -%>
                  <li> <%= link_to "#{episode.name}", :action => 'episode', :id => episode.id %></li>
                   <% end -%>                 
                 </ul>
