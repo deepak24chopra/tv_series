@@ -2,7 +2,7 @@ class AddInitialAdminUser < ActiveRecord::Migration
  
   def up
     1.time do |i|
-      AdminUser.create(name: "deepak24chopra", password_digest: "$2a$10$IEVnAvRxJyv4n7.ZhayU9.AnV3o0jqnazxELnTXCfR03RLEaewjtC ")
+      AdminUser.create(username: "deepak24chopra", password_digest: "$2a$10$IEVnAvRxJyv4n7.ZhayU9.AnV3o0jqnazxELnTXCfR03RLEaewjtC ")
     end
   end
  
