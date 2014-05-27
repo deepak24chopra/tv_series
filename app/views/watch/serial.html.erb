@@ -18,7 +18,7 @@
                 <h3>Seasons</h3>
                 <ul class="features">
                 <% @serial.seasons.each do |season| -%>
-                  <li><%= link_to "#{season.name}", :action => 'season', :id => season.id %></li>
+                  <li><%= link_to "#{season.name} (Season #{season.season_number})", :action => 'season', :id => season.id %></li>
                 
                     <p><ol>
                       <% season.episodes.visible.sorted.each do |epi| -%>
