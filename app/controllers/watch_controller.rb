@@ -3,7 +3,7 @@ class WatchController < ApplicationController
 	layout 'application'
 	def home
 		@serials = Serial.all.paginate(:page => params[:page], :per_page => 2)
-		@season = Season.where(:season_number => 4).first
+		@season = Season.all.sorted.first
 	end
 
 	def serial

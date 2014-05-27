@@ -9,7 +9,7 @@ class Season < ActiveRecord::Base
 	validates_presence_of :description
 
 
-	scope :sorted, lambda { order("serials.id ASC") }
+	scope :sorted, lambda { order("seasons.season_number DESC") }
 	scope :newest_first, lambda { order("serials.created_at DESC") }
 
 end
