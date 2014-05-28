@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :users
+
   root "watch#home"
   resources :serials
   resources :seasons

@@ -16,7 +16,7 @@ class EntryController < ApplicationController
   		end
   	end
   	if true_user
-  		session[:username] = true_user.username
+  		session[:admin_username] = true_user.username
   		flash[:notice] = "You are logged in."
   		redirect_to(:action => 'list')
   	else

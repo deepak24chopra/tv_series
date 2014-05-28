@@ -1,3 +1,6 @@
+ <% if flash[:notice] %>
+<%= flash[:notice] %>
+ <% end %>
   <script>
     videojs.options.flash.swf = "video-js.swf";
   </script>
@@ -28,10 +31,45 @@ Veiws(<%= @episode.veiws %>)
 <p><strong>Storyline:</strong>
 <%= @episode.storyline %>
 </p>
+
 <div class="col-md-1">
 <%= button_to "Subtitle", @episode.subtitle_url, class: "btn btn-primary" %>
-
 </div>
 <div class="col-md-5">
 <%= button_to ".Torrent", @episode.torrent_url, class: "btn btn-default" %>
+</div>
+<br /><br />
+<h3><div class="page-header">Comments</div></h3>
+<% @reveiws.each do |reveiw| -%>
+    <h4><strong><%= reveiw.username %> <small><%= reveiw.updated_at %></small></strong></h4>
+    <%= reveiw.content -%>
+<% end -%>
+<h4><div class="page-header">Post A Comment</div></h4>
+<div class="container">
+
+<%= form_for(@comment, :url => {:action => 'create_comment'}) do |f| %>
+    <div class="field">
+    
+    <%= f.hidden_field :episode_id, :value => @episode.id %>
+    </div>
+    
+    <% if session[:username] %>
+        <%  @comment.username = session[:username] -%>
+    <% else %>
+    <div class="field">
+    <%= f.label :username %> : 
+    <%= f.text_field :username %>
+    </div>
+    <% end -%>
+
+    <div class="field">
+    <%= f.label :content %> : 
+    <%= f.text_area :content, :cols => '120', :rows => '3' %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit('Post', class: 'btn btn-primary pull-right') %>
+    </div>
+
+<% end %>
 </div>

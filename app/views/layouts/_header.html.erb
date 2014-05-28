@@ -2,12 +2,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
       <%= link_to "WatchTvSeries", {:controller => 'watch', :action => 'home'}, class: 'navbar-brand' %>
     </div>
 
@@ -15,7 +10,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><%= link_to "Serials", :controller => 'watch', :action => 'home' %></li>
-        
+        <li class="active"><%= link_to "Login", :controller => 'watch', :action => 'login' %></li>
+        <li class="active"><%= link_to "Sign Up", :controller => 'watch', :action => 'signup' %></li>
         <li><%= link_to "About", :controller => 'watch', :action => 'about' %></li>
         <li><%= link_to "Contact Us", :controller => 'watch', :action => 'contact' %></li>
       </ul>

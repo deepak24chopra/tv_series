@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524183144) do
+ActiveRecord::Schema.define(version: 20140527173035) do
 
   create_table "admin_users", force: true do |t|
     t.string   "username"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140524183144) do
   create_table "comments", force: true do |t|
     t.string   "username"
     t.integer  "episode_id"
-    t.string   "content"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -73,9 +73,12 @@ ActiveRecord::Schema.define(version: 20140524183144) do
     t.datetime "updated_at"
   end
 
-  create_table "subscribe", force: true do |t|
-    t.string "name"
-    t.string "email"
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -19,6 +19,9 @@ class WatchController < ApplicationController
 		@episode = Episode.where(:id => params[:id], :visibility => true).first
 		@episode.veiws = @episode.veiws + 1
 		@episode.save
+
+		@reveiws = Comment.where(:episode_id => @episode.id).newest_first
+		@comment = Comment.new
 	end
 
 	def like
@@ -47,9 +50,59 @@ class WatchController < ApplicationController
 			redirect_to(:action => 'contact')
 		else
 			flash[:notice] = "Sorry Cant Submit Your Suggestion."
-			redirect_to(:action => 'home')
+			redirect_to(:action => 'contact')
 		end
 	end
+
+	def login
+	end
+
+	def logout
+	end
+
+	def user_login
+  	if params[:username].present? && params[:password].present?
+  		user = User.where(:username => params[:username]).first
+  		if user
+  			true_user = user.authenticate(params[:password])
+  		end
+  	end
+  	if true_user
+  		session[:username] = true_user.username
+  		flash[:notice] = "You are now logged in."
+  		redirect_to(:action => 'home')
+  	else
+  		flash[:notice] = "Username/password combination not correct"
+  		redirect_to(:action => 'login')
+  end
+end
+	
+	def signup
+		@user = User.new
+	end
+
+	def user_create
+		@user = User.new(user_params)
+		if @user.save
+			flash[:notice] = "Your account has been created."
+			redirect_to(:action => 'home')
+		else
+			flash[:notice] = "Sorry your account can't be created at this moment."
+			redirect_to(:action => 'signup')
+		end
+	end
+
+	def create_comment
+		@comment = Comment.new(comment_params)
+		if @comment.save
+			flash[:notice] = "Comment Posted Successfully."
+			redirect_to(:back)
+		else
+			flash[:notice] = "Sorry your comment can't be posted."
+			redirect_to(:back)
+		end
+	end
+
 
 
 	private #--------------------------
@@ -57,5 +110,13 @@ class WatchController < ApplicationController
 	def contact_params
 		params.require(:contact).permit(:name, :email, :content)
 	end
+
+	def user_params
+      params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    end
+
+    def comment_params
+      params.require(:comment).permit(:username, :episode_id, :content)
+    end
 
 end

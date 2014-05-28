@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private #-----------------------------------
 
   def confirm_user
-  	if session[:username]
+  	if session[:admin_username]
   		return true
   	else
   		flash[:notice] = "please login"

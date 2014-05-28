@@ -2,10 +2,10 @@
 
 one:
   username: MyString
-  episode_id: 1
-  content: MyText
+  email: MyString
+  password_digest: MyString
 
 two:
   username: MyString
-  episode_id: 1
-  content: MyText
+  email: MyString
+  password_digest: MyString
