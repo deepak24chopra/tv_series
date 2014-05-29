@@ -14,6 +14,12 @@
         <li class="active"><%= link_to "Sign Up", :controller => 'watch', :action => 'signup' %></li>
         <li><%= link_to "About", :controller => 'watch', :action => 'about' %></li>
         <li><%= link_to "Contact Us", :controller => 'watch', :action => 'contact' %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <% if session[:username] %>
+        <li><%= link_to "Logout", {:controller => 'watch', :action => 'logout'}%></li>
+  
+         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

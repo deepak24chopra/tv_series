@@ -58,7 +58,10 @@ class WatchController < ApplicationController
 	end
 
 	def logout
-	end
+    session[:username] = nil
+    flash[:notice] = "You are now logged out."
+    redirect_to(:action => "home")
+  	end
 
 	def user_login
   	if params[:username].present? && params[:password].present?

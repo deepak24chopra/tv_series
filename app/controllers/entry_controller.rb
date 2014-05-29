@@ -26,7 +26,7 @@ class EntryController < ApplicationController
 end
 
 	def logout
-    session[:username] = nil
+    session[:admin_username] = nil
     flash[:notice] = "Logged out"
     redirect_to(:action => "login")
   end
