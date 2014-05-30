@@ -32,8 +32,12 @@
 </div>
 <br /><br />
 <div class="row">
+<p><strong>IMDB Rating:</strong>
+<%= @episode.imdb_rating %>
+</p>
+
 <p><strong>Storyline:</strong>
-<%= @episode.storyline %>
+<%= @episode.storyline %>...<%= link_to "More(IMDB)", @episode.imdb_link %>
 </p>
 
 <div class="col-md-1">
@@ -58,7 +62,7 @@
     </div>
     
     <% if session[:username] %>
-        <%  @comment.username = session[:username] -%>
+           <%= f.hidden_field :username, :value => session[:username]%>
     <% else %>
     <div class="field">
     <p>Name </p> 

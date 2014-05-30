@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527173035) do
+ActiveRecord::Schema.define(version: 20140530173759) do
 
   create_table "admin_users", force: true do |t|
     t.string   "username"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 20140527173035) do
     t.datetime "updated_at"
     t.integer  "veiws"
     t.boolean  "visibility"
+    t.string   "imdb_link"
+    t.string   "imdb_rating"
   end
 
   create_table "seasons", force: true do |t|
