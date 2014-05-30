@@ -21,13 +21,17 @@
   </video>
   </center>
 </p>
-<div id="likes">
+<div class="row">
+<div id="likes" class="pull-left">
 <%= render "watch/likes" -%>&nbsp;
-Veiws(<%= @episode.veiws %>)
+
 </div>
-
-<br />
-
+<div class="pull-right well well-sm">
+<%= @episode.veiws %>  Veiws
+</div>
+</div>
+<br /><br />
+<div class="row">
 <p><strong>Storyline:</strong>
 <%= @episode.storyline %>
 </p>
@@ -57,19 +61,20 @@ Veiws(<%= @episode.veiws %>)
         <%  @comment.username = session[:username] -%>
     <% else %>
     <div class="field">
-    <%= f.label :username %> : 
-    <%= f.text_field :username %>
+    <p>Name </p> 
+  <%= f.text_field :username,class: "form-control" %>
     </div>
     <% end -%>
-
+<br />
     <div class="field">
-    <%= f.label :content %> : 
-    <%= f.text_area :content, :cols => '120', :rows => '3' %>
+<p>Comment</p> 
+    <%= f.text_area :content, :cols => '120', :rows => '3',class: "form-control" %>
     </div>
-
+<br />
     <div class="actions">
     <%= f.submit('Post', class: 'btn btn-primary pull-right') %>
     </div>
 
 <% end %>
+</div>
 </div>

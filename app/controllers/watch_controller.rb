@@ -60,7 +60,7 @@ class WatchController < ApplicationController
 	def logout
     session[:username] = nil
     flash[:notice] = "You are now logged out."
-    redirect_to(:action => "home")
+    redirect_to(:back)
   	end
 
 	def user_login
