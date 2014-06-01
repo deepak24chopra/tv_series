@@ -21,7 +21,7 @@
 <hr />
 <p>
 <strong>Seasons:</strong>
-<% @serial.seasons.each do |season|  -%>
+<% @serial.seasons.sorted.each do |season|  -%>
 <a href="<%= url_for(season) -%>"><%= season.name %></a><br />
 <% end -%>
 </p>

@@ -35,7 +35,7 @@
 <hr />
 <p>
 <strong>Episodes:</strong>
-<% @season.episodes.each do |episode|  -%>
+<% @season.episodes.sorted.each do |episode|  -%>
 <a href="<%= url_for(episode) -%>"><%= episode.name %></a><br />
 <% end -%>
 </p>

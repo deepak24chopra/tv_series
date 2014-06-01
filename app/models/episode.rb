@@ -5,7 +5,6 @@ class Episode < ActiveRecord::Base
 	
 
 	validates_presence_of :season
-	validates_presence_of :video_url
 	validates_presence_of :name
 	validates_presence_of :description
 	validates_presence_of :storyline

@@ -89,6 +89,7 @@ end
 		if @user.save
 			flash[:notice] = "Your account has been created."
 			redirect_to(:action => 'home')
+			session[:username] = @user.username
 		else
 			flash[:notice] = "Sorry your account can't be created at this moment."
 			redirect_to(:action => 'signup')

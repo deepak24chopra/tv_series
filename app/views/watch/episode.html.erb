@@ -46,7 +46,8 @@
 <div class="col-md-5">
 <%= button_to ".Torrent", @episode.torrent_url, class: "btn btn-default" %>
 </div>
-<br /><br />
+<br /><br /> 
+
 <h3><div class="page-header">Comments</div></h3>
 <% @reveiws.each do |reveiw| -%>
     <h4><strong><%= reveiw.username %> <small><%= reveiw.updated_at %></small></strong></h4>
