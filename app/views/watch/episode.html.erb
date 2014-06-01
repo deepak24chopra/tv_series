@@ -1,6 +1,7 @@
  <% if flash[:notice] %>
 <%= flash[:notice] %>
  <% end %>
+ <%= link_to "Back To Season", :action => 'season', :id => @episode.season.id %>
   <script>
     videojs.options.flash.swf = "video-js.swf";
   </script>
