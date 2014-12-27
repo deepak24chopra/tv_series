@@ -2,8 +2,6 @@ class Serial < ActiveRecord::Base
 
 	has_many :seasons
 
-	
-
 	validates_presence_of :name
 	validates_length_of :name, :maximum => 255
 	validates_presence_of :content

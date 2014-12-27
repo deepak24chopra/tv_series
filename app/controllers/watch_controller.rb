@@ -22,6 +22,7 @@ class WatchController < ApplicationController
 
 		@reveiws = Comment.where(:episode_id => @episode.id).newest_first
 		@comment = Comment.new
+		
 	end
 
 	def like

@@ -16,6 +16,7 @@
     <source src="<%= @episode.video_url -%> " type='video/mp4' />
     <source src="<%= @episode.video_url -%>" type='video/webm' />
     <source src="<%= @episode.video_url -%>" type='video/ogg' />
+    <source src="<%= @episode.video_url -%>" type="video/x-flv">
     <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
     <track kind="subtitles" src="<%= @episode.subtitle_url -%>" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
   

@@ -1,6 +1,6 @@
 <!-- Start: Main content -->
     <div class="content">    
-      <div class="container">
+      <div class="container" id="episode">
         <!-- Start: Product description -->
         
           <div class="row bottom-space">
@@ -22,7 +22,7 @@
                 <h3>Episodes</h3>
                 <ul class="features">
                 <% @season.episodes.visible.sorted.each do |episode| -%>
-                 <li> <%= link_to "#{episode.name}", :action => 'episode', :id => episode.id %></li>
+                 <li><a href= "<%= url_for(episode) -%>"><%= episode.name -%></a></li>
                   <% end -%>                 
                 </ul>
               </div>                                           
