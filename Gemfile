@@ -5,10 +5,11 @@ gem 'will_paginate', '~> 3.0'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
 group :development do
-gem 'sqlite3'
+#gem 'sqlite3'
 end
+gem 'sass', '~> 3.4.19'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 #gem 'less-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -21,7 +22,8 @@ gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-gem "bootstrap"
+#gem "bootstrap"
+gem 'bootstrap', '~> 4.0.0.alpha6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -43,5 +45,5 @@ gem 'font-awesome-sass'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 group :production do
-	#gem 'pg'
+	gem 'pg', '~> 0.20.0'
 end
