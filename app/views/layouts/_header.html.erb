@@ -9,10 +9,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Serials", :controller => 'watch', :action => 'home' %></li>
+        <li><%= link_to "Serials", :controller => 'watch', :action => 'home' %></li>
         <% unless session[:username] %>
-        <li class="active"><%= link_to "Login", :controller => 'watch', :action => 'login' %></li>
-        <li class="active"><%= link_to "Sign Up", :controller => 'watch', :action => 'signup' %></li>
+        <li><%= link_to "Login", :controller => 'watch', :action => 'login' %></li>
+        <li><%= link_to "Sign Up", :controller => 'watch', :action => 'signup' %></li>
         <% end -%>
         <li><%= link_to "About", :controller => 'watch', :action => 'about' %></li>
         <li><%= link_to "Contact Us", :controller => 'watch', :action => 'contact' %></li>
