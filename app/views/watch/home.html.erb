@@ -12,7 +12,7 @@
       <div class="caption">
         <h3><%= serial.name -%></h3>
         <p><%= serial.content.truncate(234) -%></p>
-        <p><%= link_to("More", {:action => 'serial', :id => serial.id}, class: "btn btn-primary") -%>&nbsp;<%= link_to("Season #{@season.season_number}", {:action => 'season', :id => @season.id}, class: "btn btn-primary") -%></p>
+        <p><%= link_to("More", {:action => 'serial', :id => serial.id}, class: "btn btn-primary") -%>&nbsp;<%= link_to("Season #{@season.season_number}", {:action => 'season', :id => season.id}, class: "btn btn-primary") -%></p>
       </div>
     </div>
   </div>
