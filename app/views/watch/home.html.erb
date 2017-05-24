@@ -10,9 +10,11 @@
     <div class="thumbnail">
       <%= image_tag(serial.image_url,class: "thumbnail",size: "400x400") -%>
       <div class="caption">
+      <% serial.seasons.each do |season| -%>
+      <% end -%>
         <h3><%= serial.name -%></h3>
         <p><%= serial.content.truncate(234) -%></p>
-        <p><%= link_to("More", {:action => 'serial', :id => serial.id}, class: "btn btn-primary") -%>&nbsp;<%= link_to("Season #{@season.season_number}", {:action => 'season', :id => season.id}, class: "btn btn-primary") -%></p>
+        <p><%= link_to("More", {:action => 'serial', :id => serial.id}, class: "btn btn-primary") -%>&nbsp;<%= link_to("Season #{@season.season_number}", {:action => 'season', :id => serial.seasons.first.id }, class: "btn btn-primary") -%></p>
       </div>
     </div>
   </div>
