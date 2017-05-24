@@ -22,7 +22,9 @@
                 <h3>Episodes</h3>
                 <ul class="features">
                 <% @season.episodes.visible.sorted.each do |episode| -%>
-                 <li><a href= "<%= url_for(episode) -%>"><%= episode.name -%></a></li>
+                 <li>
+                 <%= link_to("#{episode.name}", {:action => 'episode', :id => episode.id}, class: "btn btn-primary") -%>
+                 </li>
                   <% end -%>                 
                 </ul>
               </div>                                           
